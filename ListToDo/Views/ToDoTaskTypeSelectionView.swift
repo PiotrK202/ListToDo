@@ -106,8 +106,3 @@ struct ToDoTaskTypeSelectionView: View {
         }
     }
 }
-
-
-#Preview {
-    ToDoTaskSelectionView()
-}
