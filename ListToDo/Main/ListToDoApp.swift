@@ -13,5 +13,6 @@ struct ListToDoApp: App {
         WindowGroup {
             ListToDoView()
         }
+        .modelContainer(for: TaskModel.self)
     }
 }
