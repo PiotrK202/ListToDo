@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 import UserNotifications
+import UIKit
 
 @MainActor
 @Observable final class ListToDoViewModel {
@@ -19,10 +20,14 @@ import UserNotifications
         self.modelContext = modelContext
     }
     
-    func addTask(title: String, taskDescription: String, type: TaskType, date: Date? = nil) throws {
+    func addTask(title: String, taskDescription: String, type: TaskType, date: Date? = nil) {
         let task = TaskModel(title: title, taskDescription: taskDescription, type: type, notificationDate: date)
         modelContext.insert(task)
         saveModel()
+    }
+    
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
     
     func moveTask(_ task: TaskModel, to newType: TaskType) throws {
