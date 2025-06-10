@@ -9,7 +9,7 @@ import SwiftUI
 import UserNotifications
 
 @Observable
-final class NotyficationHelper {
+final class NotificationHelper {
     var showPermissionAlert = false
     
     func requestPermission() async -> Bool {
