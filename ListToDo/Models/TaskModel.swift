@@ -25,7 +25,7 @@ final class TaskModel: Identifiable, Hashable {
                          notificationDate: notificationDate)
     }
     
-    init(id: UUID, title: String, taskDescription: String, type: TaskType, notificationDate: Date? = nil, createdAt: Date = Date()) {
+    init(id: UUID = UUID(), title: String, taskDescription: String, type: TaskType, notificationDate: Date? = nil, createdAt: Date = Date()) {
         self.id = id
         self.title = title
         self.taskDescription = taskDescription
